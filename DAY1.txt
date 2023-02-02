@@ -1,0 +1,41 @@
+use inventmanage_Db;
+create Table Users
+(UserID int primary key identity(1,1),
+UserName varchar(50),
+Password varchar(50),
+FullName varchar(200),
+IsActive bit,
+Category varchar(50)
+);
+create table Product_Master
+(ProductID int primary key identity(1,1),
+ProductName varchar(50),
+AvailabileQty bigint
+);
+create table all_Transactions
+(TransactionId int primary key identity(1,1),
+TransactionDate Date,
+ProductId int references Product_Master(ProductId),
+TransactionType varchar(5),
+Qty int,
+UpdatedBy int
+);
+
+INSERT into Product_Master Values('Tv',200);
+INSERT into Product_Master Values('WashingMachine',2000);
+INSERT into Product_Master Values('Microowen',1000);
+INSERT into Product_Master Values('AC',1500);
+INSERT into Users(Username,Password,FullName,IsActive)values('DADA','dada@123','DadaKhalandar',1);
+INSERT into Users(Username,Password,FullName,IsActive)values('Hemanth','krish52','HemanthKumar',1);
+INSERT into Users(Username,Password,FullName,IsActive)values('chinni','roshan33','Roshan',1);
+INSERT into Users(Username,Password,FullName,IsActive)values('Bhanu','Bhanu415','Bhanuteja',1);
+
+select * from Users;
+select * from Product_Master;
+select * from all_Transactions
+
+
+SET IDENTITY_INSERT all_Transactions ON     ---- we get the taking of input -----
+INSERT into all_Transactions(TransactionId,TransactionDate,ProductId,TransactionType,Qty,UpdatedBy)values('1001','2001-01-01','2','1','1','1');
+INSERT into all_Transactions(TransactionId,TransactionDate,ProductId,TransactionType,Qty,UpdatedBy)values('1002','2001-01-02','1','2','1','1');
+INSERT into all_Transactions(TransactionId,TransactionDate,ProductId,TransactionType,Qty,UpdatedBy)values('1002','2001-01-02','1','2','1','1');
