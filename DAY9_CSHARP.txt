@@ -1,0 +1,105 @@
+Assignment:
+Var
+
+
+Multiple catch blocks in single try block:
+ try
+            {
+                // string s = null;
+                int n= int.Parse(Console.ReadLine());
+                int n1=int.Parse(Console.ReadLine());
+                Console.WriteLine(n / n1);
+            }
+            catch (DivideByZeroException dzEx)
+            {
+                Console.WriteLine(dzEx.Message);
+            }
+            catch (OverflowException ovEx)
+            {
+                Console.WriteLine(ovEx.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+Common language Runtime will be executing the code 
+        which throws the exception
+Throw keyword is used to instructing the CLR to throw the exception given
+ 
+Console.WriteLine("enter the email");
+            String email=Console.ReadLine();
+            if(email.Length>10)
+            {
+                throw new Exception("Length of email is more than 10");
+            }
+finally Block:
+used for 
+- connecting database
+--open connection
+--manipulationsa( Done correctly or not correctly)
+--Closing connection
+
+ finally
+            {
+                Console.WriteLine("Excecution done successdully");
+                Console.WriteLine("Base don the input given the exception is given as output");
+            }
+
+Linq:
+
+            List<int> listOfNumbers = new List<int>();
+            listOfNumbers.Add(100);
+            listOfNumbers.Add(25);
+            Employee john = new Employee();
+            john.Name = "DADA";
+            john.Age = 21;
+            john.Dept = "ECE";
+
+            List<Employee> listOfEmployees = new List<Employee>();
+            listOfEmployees.Add(john);
+            Employee prem = new Employee();
+            prem.Name = "Hemanth";
+            prem.Age = 20;
+            prem.Dept = "CSe";
+            listOfEmployees.Add(new Employee() { Name = "Chinnish", Age = 20, Dept = "ECE" });
+            listOfEmployees.Add(new Employee() { Name = "Bhanu", Age = 22, Dept = "ECE" });
+
+            Console.WriteLine("Name              Age        Dept");
+            foreach(Employee item in listOfEmployees)
+            {
+                if(item.Dept =="ECE")
+                {
+                    Console.WriteLine(item.Name+"           " +  item.Age+ "           "+ item.Dept);
+                }
+            }
+
+            
+            //Linq   Language integrated query
+           
+            var query = from t in listOfEmployees where t.Age == 21 select t.Name;
+            foreach (var item in query)
+            {
+                Console.WriteLine(item);
+            }
+  var query2 = listOfEmployees.GroupBy(employee => employee.Dept).ToDictionary(group => group.Key, count => count.Count());
+            foreach (var item in query2)
+
+            {
+                Console.WriteLine(item);
+
+            }
+to print the count
+
+
+
+
+-----------------------------------------------------------------------------------
+Sealed Class:
+keyword sealed
+  classes cant be inherited
+--------------------
+Named Parameters
+crtating and calling function 
+---------------------
+Partial classes:
+acess the more classes from main class
