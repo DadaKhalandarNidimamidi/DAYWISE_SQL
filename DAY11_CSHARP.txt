@@ -1,0 +1,19 @@
+N UNIT FRAMEWORK:
+used for testing or doing the unit testing.
+Class library:
+used for creating own headerfiles or librarries
+TestFixture:
+used for denoting a class that contain unit test
+[Test] Attribute used for indicating the method is a test method
+-----------------------------------------------------------------
+Create a new project with Create----->classLibrary  create project
+Solution explorer Right click-----> add new project ---> nunit test
+add references by clicking the right click and give the refernce
+create the test cases and run them
+----------------------------
+Design Patterns - Creational:  Singleton, Factory, Abstract Factory
+
+Design Patterns - Structural:  Adapter, Decorator, Bridge, Façade
+
+Design Patterns - Behavioral:  Chain of Responsibility,   Mediator, Observer
+-----------------------------
